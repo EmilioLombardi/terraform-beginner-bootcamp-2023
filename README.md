@@ -171,3 +171,5 @@ If it is succesful you should see a json payload return that looks like this:
 }
 ```
 We'll need to generate AWS CLI credentials from IAM User in order to use the AWS CLI.
+
+Also make sure that Yaml files have correct spacing as once you stop gitpod, it will not allow you to access until spacing is correct
