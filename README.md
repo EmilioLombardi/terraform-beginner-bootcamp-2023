@@ -170,6 +170,8 @@ If it is succesful you should see a json payload return that looks like this (Ex
     "Arn": "arn:aws:iam::123456789012:user/terraform-beginner-bootcamp"
 }
 ```
-We'll need to generate AWS CLI credentials from IAM User in order to use the AWS CLI.
+We'll need to generate AWS CLI credentials from IAM User in order to use the AWS CLI this is important.
 
 Also make sure that Yaml files are correct, as once you stop gitpod, it will not allow you to access. YAML validator can confirm if Yaml file is valid.
+
+
