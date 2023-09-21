@@ -239,3 +239,17 @@ If you lose thise file, you lose knowing the state of your infrastructure.
 
 `.terraform` directory contains binaries of terraform providers.
 
+#### S3 bucket setup configuration issue
+
+When setting up an S3 bucket you must make sure that the bucket name does not conflict with AWS's bucket naming rules. This may be the case as the bucket name generated is random. 
+
+To work around this issue we need to define the configuration, which will make sure that the generated bucket name does not conflict with the Bucket naming Rules
+
+```hcl
+ resource "random_string" "bucket_name" {
+  lower = true
+  upper = false
+  length   = 32
+  special  = false
+}
+```
