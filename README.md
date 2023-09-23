@@ -283,3 +283,15 @@ Then open the file
 	}
 }
 ```
+
+We have automated this workaround with the following bash script [bin/generate_tfrc/credentials](bin/generate_tfrc_credentials)
+
+#### Forgetting to create new issue
+
+If we for whatever reason forget to make a new issue while working in gitpod. Here is what we need to do:
+On Github create new issue and then create new branch
+in the VsCode CLI type `Git add .` then `git stash save` this will save the working directory and index state WIP on main.
+Type `git stash list` then `git fetch` 
+`git checkout` (Write the branch name after checkout) this will set up to track and switch to a new branch
+Type `Git pull` (Already up to date.) is what responde you should get back
+Then Type `git stash apply` this will then tell toy what chanages is to be commted and changes not staged for commit
