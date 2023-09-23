@@ -253,3 +253,33 @@ To work around this issue we need to define the configuration, which will make s
   special  = false
 }
 ```
+
+## Potential issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to `terraform login` it will launch in bash, a wiswig view to generate a token. However, it may not work in Gitpod VsCode browser. I personally did not encounter this issue myself. Here is the workaround just incase we run in to this issue
+
+The workaround is to manually generate a token in Terraform Cloud
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+```
+
+Then create open the file manually here:
+
+```sh
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provide the following code (replace your token in the file):
+Then open the file
+
+```json
+{
+	"credentials": {
+		"app.terraform.io": {
+			"token": "YOUR-TERRAFORM-CLOUD-TOKEN"
+		}
+	}
+}
+```
