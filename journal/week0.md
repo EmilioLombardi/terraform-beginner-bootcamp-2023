@@ -1,34 +1,36 @@
 # Terraform Beginner Bootcamp 2023 - Week 0
 
-- [Terraform Beginner Bootcamp 2023 - Week 0](#terraform-beginner-bootcamp-2023---week-0)
-  * [Semantic Versioning :mage:](#semantic-versioning--mage-)
-  * [Install the Terraform CLI](#install-the-terraform-cli)
-    + [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
-    + [Considerations for Linux Distributions](#considerations-for-linux-distributions)
-    + [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-      - [Shebang](#shebang)
-      - [Execution Considerations](#execution-considerations)
-      - [Linux Permissions Considerations](#linux-permissions-considerations)
-    + [Github Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
-    + [Working with Env Vars](#working-with-env-vars)
-      - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-      - [Printing Vars](#printing-vars)
-      - [Scoping of Env Vars](#scoping-of-env-vars)
-      - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
-    + [AWS CLI installation](#aws-cli-installation)
-  * [terraform Basics](#terraform-basics)
-    + [Terraform Registry](#terraform-registry)
-  * [Terraform Console](#terraform-console)
-      - [Terraform Init](#terraform-init)
-      - [Terraform Plan](#terraform-plan)
-      - [terrform Apply](#terrform-apply)
-      - [Terraform Destory](#terraform-destory)
-      - [Terraform Lock Files](#terraform-lock-files)
-      - [Terraform State Files](#terraform-state-files)
-      - [Terraform Directory](#terraform-directory)
-      - [S3 bucket setup configuration issue](#s3-bucket-setup-configuration-issue)
-  * [Potential issues with Terraform Cloud Login and Gitpod Workspace](#potential-issues-with-terraform-cloud-login-and-gitpod-workspace)
-      - [Forgetting to create new issue](#forgetting-to-create-new-issue)
+- [Semantic Versioning](#semantic-versioning)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+  * [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+  * [Considerations for Linux Distributions](#considerations-for-linux-distributions)
+  * [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+    + [Shebang](#shebang)
+    + [Execution Considerations](#execution-considerations)
+    + [Linux Permissions Considerations](#linux-permissions-considerations)
+  * [Gitpod Lifecycle - Before, Init, Command](#gitpod-lifecycle---before--init--command)
+- [Working with Env Vars](#working-with-env-vars)
+  * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+  * [Printing Vars](#printing-vars)
+  * [Scoping of Env Vars](#scoping-of-env-vars)
+  * [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI installation](#aws-cli-installation)
+- [terraform Basics](#terraform-basics)
+  * [Terraform Registry](#terraform-registry)
+- [Terraform Console](#terraform-console)
+    + [Terraform Init](#terraform-init)
+    + [Terraform Plan](#terraform-plan)
+    + [terrform Apply](#terrform-apply)
+    + [Terraform Destory](#terraform-destory)
+    + [Terraform Lock Files](#terraform-lock-files)
+    + [Terraform State Files](#terraform-state-files)
+    + [Terraform Directory](#terraform-directory)
+    + [S3 bucket setup configuration issue](#s3-bucket-setup-configuration-issue)
+- [Potential issues with Terraform Cloud Login and Gitpod Workspace](#potential-issues-with-terraform-cloud-login-and-gitpod-workspace)
+    + [Forgetting to create new issue](#forgetting-to-create-new-issue)
+
+
+
 
 
 ## Semantic Versioning 
@@ -123,19 +125,19 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, Command)
+### Gitpod Lifecycle - Before, Init, Command
 
 We need to be careful when using the Init because it will not rerun if we restart an existing workspace.
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
-### Working with Env Vars
+## Working with Env Vars
 
 We can list out all ENviroment Variable (Env Vars) using the `env` command
 
 We can filter specific env vars using grep eg. `env | grep AWS_ `
 
-#### Setting and Unsetting Env Vars
+### Setting and Unsetting Env Vars
 
 In the terminal we can set using `export HELLO='world`
 
@@ -156,17 +158,17 @@ HELLO='world'
 echo $HELLO
 ```
 
-#### Printing Vars
+### Printing Vars
 
 We can print an env var using echo eg. `echo $HELLO`
 
-#### Scoping of Env Vars
+### Scoping of Env Vars
 
 When you open up new bash terminals in VSCode it will not be aware of env vars that you have set in another window.
 
 If you want to Env Vars to persist across all future bash terminals that are open you need to set env vars in your bash profile. eg. `.bash_profile`
 
-#### Persisting Env Vars in Gitpod
+### Persisting Env Vars in Gitpod
 
 We can persist env vars into gitpod by storing them in Gitpod Secrets Storage.
 
@@ -178,7 +180,7 @@ All future workspaces launched will set the env vars for all bash terminals open
 
 You can also set env vars in the `.gitpod.yml` but this can only contain non-senstive env vars.
 
-### AWS CLI installation 
+## AWS CLI installation 
 
 AWS CLI is installed for this project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
 
