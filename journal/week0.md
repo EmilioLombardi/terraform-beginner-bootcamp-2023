@@ -8,16 +8,16 @@
     + [Shebang](#shebang)
     + [Execution Considerations](#execution-considerations)
     + [Linux Permissions Considerations](#linux-permissions-considerations)
-  * [Gitpod Lifecycle](#gitpod-lifecycle)
+- [Gitpod Lifecycle](#gitpod-lifecycle)
 - [Working with Env Vars](#working-with-env-vars)
   * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
   * [Printing Vars](#printing-vars)
   * [Scoping of Env Vars](#scoping-of-env-vars)
   * [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
 - [AWS CLI installation](#aws-cli-installation)
-- [terraform Basics](#terraform-basics)
+- [Terraform Basics](#terraform-basics)
   * [Terraform Registry](#terraform-registry)
-- [Terraform Console](#terraform-console)
+  * [Terraform Console](#terraform-console)
     + [Terraform Init](#terraform-init)
     + [Terraform Plan](#terraform-plan)
     + [terrform Apply](#terrform-apply)
@@ -208,7 +208,7 @@ We'll need to generate AWS CLI credentials from IAM User in order to use the AWS
 Also make sure that Yaml files are correct, as once you stop gitpod, it will not allow you to access. YAML validator can confirm if Yaml file is valid.
 
 
-## terraform Basics
+## Terraform Basics
 
 ### Terraform Registry
 
